@@ -2,6 +2,7 @@
 
 namespace AlbumTest\Controller;
 
+use Album\Controller\AlbumController;
 use Laminas\Stdlib\ArrayUtils;
 use Laminas\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
