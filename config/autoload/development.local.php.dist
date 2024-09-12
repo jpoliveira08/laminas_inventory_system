@@ -20,4 +20,10 @@ return [
     'view_manager' => [
         'display_exceptions' => true,
     ],
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn' => 'mysql:host=127.0.0.1;dbname=sandbox',
+        'username' => 'root',
+        'password' => 'root',
+    ]
 ];

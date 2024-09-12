@@ -2,13 +2,14 @@
 
 namespace Album;
 
+use Album\Model\AlbumTableFactory;
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
 
 return [
     'controllers' => [
         'factories' => [
-            Controller\AlbumController::class => InvokableFactory::class,
+            Controller\AlbumController::class => ReflectionBasedAbstractFactory::class, // Provides a reflection-based approach to instantiation, resolving constructor dependencies to the relevant services
         ],
     ],
     'router' => [
@@ -33,5 +34,11 @@ return [
         'template_path_stack' => [
             'album' => __DIR__ . '/../view',
         ],
+    ],
+    'service_manager' => [
+        'factories' => [
+            Model\AlbumTable::class => AlbumTableFactory::class,
+        ],
+
     ],
 ];

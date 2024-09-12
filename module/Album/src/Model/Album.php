@@ -11,6 +11,7 @@ class Album
 
     /**
      * This method copies the data from the provided array to our entity's properties
+     *  Has to have a filter to ensure the values injected are valid
      *
      * @param array $array
      * @return void

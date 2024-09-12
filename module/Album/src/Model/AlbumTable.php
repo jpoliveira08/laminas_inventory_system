@@ -7,7 +7,7 @@ use Laminas\Db\TableGateway\TableGatewayInterface;
 
 class AlbumTable
 {
-    public function __construct(private TableGatewayInterface $tableGateway)
+    public function __construct(private TableGatewayInterface $tableGateway) //Table Data Gateway pattern can become limiting in larger systems
     {
     }
     

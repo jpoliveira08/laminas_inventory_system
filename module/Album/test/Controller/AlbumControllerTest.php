@@ -8,7 +8,7 @@ use Laminas\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 class AlbumControllerTest extends AbstractHttpControllerTestCase
 {
-    protected $traceError = false;
+    protected $traceError = true;
 
     protected function setUp(): void
     {
@@ -20,6 +20,12 @@ class AlbumControllerTest extends AbstractHttpControllerTestCase
         ));
 
         parent::setUp();
+        $services = $this->getApplicationServiceLocator();
+        $config = $services->get('config');
+        unset($config['db']);
+        $services->setAllowOverride(true);
+        $services->setService('config', $config);
+        $services->setAllowOverride(false);
     }
 
     /**

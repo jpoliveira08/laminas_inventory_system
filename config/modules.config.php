@@ -4,6 +4,7 @@
  * List of enabled modules for this application.
  *
  * This should be an array of module namespaces used in the application.
+ * All Laminas components that provide laminas-servicemanager configuration are also exposed as modules themselves
  */
 return [
     'Laminas\Form',
